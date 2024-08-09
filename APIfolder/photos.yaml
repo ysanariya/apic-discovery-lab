@@ -1,0 +1,83 @@
+openapi: 3.0.3
+info:
+  title: photos
+  version: 1.0.0
+  x-ibm-name: photos
+servers:
+  - url: https://jsonplaceholder.typicode.com
+paths:
+  /photos:
+    get:
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+  /photos/{pathParam0}:
+    parameters:
+      - name: pathParam0
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PhotosPhotosGetResponse'
+components:
+  schemas:
+    PhotosPhotosGetResponse:
+      type: object
+      properties:
+        albumId:
+          type: number
+        id:
+          type: number
+        title:
+          type: string
+        url:
+          type: string
+        thumbnailUrl:
+          type: string
+  securitySchemes:
+    clientID:
+      type: apiKey
+      in: header
+      name: X-IBM-Client-Id
+x-ibm-configuration:
+  type: rest
+  phase: realized
+  enforced: true
+  testable: true
+  gateway: datapower-api-gateway
+  cors:
+    enabled: true
+  assembly:
+    execute:
+      - invoke:
+          title: invoke
+          version: 2.0.0
+          verb: keep
+          target-url: $(target-url)$(request.path)
+          follow-redirects: false
+          timeout: 60
+          parameter-control:
+            type: allowlist
+            values: []
+          header-control:
+            type: blocklist
+            values: []
+          inject-proxy-headers: true
+  properties:
+    target-url:
+      value: http://example.com/operation-name
+      description: The URL of the target service
+      encoded: false
+security:
+  - clientID: []
