@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: photos
-  version: 1.0.0
+  version: 1.1.0
   x-ibm-name: photos
 servers:
   - url: https://jsonplaceholder.typicode.com
