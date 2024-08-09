@@ -3,12 +3,10 @@ name: Send Discovered API to ApiConnect
 on: [pull_request, workflow_dispatch, push]
 
 env:
-  API_HOST: e2etest-sanity-ocp.cp.fyre.ibm.com
-  # platform_api_prefix is not required to change for ApiConnect on Cloud
-  PLATFORM_API_PREFIX: production-mgmt-platform-api-apic.apps
-  PROVIDER_ORG: api-test
-  INSECURE_SKIP_TLS_VERIFY: True
-  API_FILES: APIfolder/api-with-examples.yaml
+  API_HOST: us-east-a.apiconnect.test.automation.ibm.com
+  PROVIDER_ORG: setanta
+  API_FILES: APIfolder/uber-api.json
+  #API_FILES: APIfolder/coffee-store.yaml
   #API_FOLDERS: APIfolder,APIfolderTwo
 
 jobs:
@@ -26,8 +24,7 @@ jobs:
         api_host: ${{ env.API_HOST }}
         platform_api_prefix: ${{ env.PLATFORM_API_PREFIX }}
         provider_org: ${{ env.PROVIDER_ORG }}
-        insecure_skip_tls_verify: ${{ env.INSECURE_SKIP_TLS_VERIFY }}
-        api_key: ${{ secrets.apicApikey }}
+        api_key: ${{ secrets.apicApikey_participant_0 }}
         api_files: ${{ env.API_FILES }}
         api_folders: ${{ env.API_FOLDERS }}
         resync_check: ${{ true }}
