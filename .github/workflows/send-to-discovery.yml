@@ -5,7 +5,7 @@ on: [pull_request, workflow_dispatch, push]
 env:
   API_HOST: us-east-a.apiconnect.test.automation.ibm.com
   PROVIDER_ORG: setanta
-  API_FILES: APIfolder/photos.json
+  API_FILES: APIfolder/photos.yaml
   #API_FILES: APIfolder/coffee-store.yaml
   #API_FOLDERS: APIfolder,APIfolderTwo
 
