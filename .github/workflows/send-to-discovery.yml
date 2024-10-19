@@ -3,9 +3,10 @@ name: Send Discovered API to ApiConnect
 on: [pull_request, workflow_dispatch, push]
 
 env:
-  API_HOST: us-east-a.apiconnect.test.automation.ibm.com
-  PROVIDER_ORG: setanta
-  API_FILES: APIfolder/uber-api.json
+  API_HOST: REPLACE
+  PROVIDER_ORG: REPLACE
+  API_FILES: APIfolder/photos.yaml
+  #API_FILES: APIfolder/uber-api.json
   #API_FILES: APIfolder/coffee-store.yaml
   #API_FOLDERS: APIfolder,APIfolderTwo
 
