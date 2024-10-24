@@ -3,7 +3,7 @@ info:
   title: photos
   version: 1.0.0
   x-ibm-name: photos
-  description: My lab API editied by Michael
+  description: My lab API editied by Michael one more try
 servers:
   - url: https://jsonplaceholder.typicode.com
 paths:
