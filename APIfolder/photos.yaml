@@ -3,7 +3,7 @@ info:
   title: photos
   version: 1.0.0
   x-ibm-name: photos
-  description: Welcome to Vegas 007 edited by Michael and here I go again
+  description: Welcome to Vegas 007 edited by Michael and here I go again and again
 servers:
   - url: https://jsonplaceholder.typicode.com
 paths:
